@@ -5,7 +5,7 @@
  */
 package dtos;
 
-import entities.RenameMe;
+import entities.Person;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,24 +13,24 @@ import java.util.List;
  *
  * @author tha
  */
-public class RenameMeDTO {
+public class PersonDTO {
     private long id;
     private String str1;
     private String str2;
 
-    public RenameMeDTO(String dummyStr1, String dummyStr2) {
+    public PersonDTO(String dummyStr1, String dummyStr2) {
         this.str1 = dummyStr1;
         this.str2 = dummyStr2;
     }
     
-    public static List<RenameMeDTO> getDtos(List<RenameMe> rms){
-        List<RenameMeDTO> rmdtos = new ArrayList();
-        rms.forEach(rm->rmdtos.add(new RenameMeDTO(rm)));
+    public static List<PersonDTO> getDtos(List<Person> rms){
+        List<PersonDTO> rmdtos = new ArrayList();
+        rms.forEach(rm->rmdtos.add(new PersonDTO(rm)));
         return rmdtos;
     }
 
 
-    public RenameMeDTO(RenameMe rm) {
+    public PersonDTO(Person rm) {
         if(rm.getId() != null)
             this.id = rm.getId();
         this.str1 = rm.getDummyStr1();
@@ -55,7 +55,7 @@ public class RenameMeDTO {
 
     @Override
     public String toString() {
-        return "RenameMeDTO{" + "id=" + id + ", str1=" + str1 + ", str2=" + str2 + '}';
+        return "PersonDTO{" + "id=" + id + ", str1=" + str1 + ", str2=" + str2 + '}';
     }
     
     
